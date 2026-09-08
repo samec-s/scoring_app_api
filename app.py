@@ -37,4 +37,4 @@ def part(part_id):
     return jsonify({"you_asked_for":part_id})
 
 
-app.run(port=PORT)
+app.run(port=PORT, host= "0.0.0.0")
