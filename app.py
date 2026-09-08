@@ -19,6 +19,8 @@ def score():
         return jsonify({'error': "missing Authorization header"}), 401
     else:
         authorization = auth_header.split()
+        if len(authorization) != 2:
+            return jsonify({'error': "incorrect Authorization header"}), 401
         if authorization[0] == 'Bearer':
             if authorization[1] == SECRET_TOKEN:
                 pass
